@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 22nd Birthday Jane ❤️</title>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+min-height:100vh;
+
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#ffd6e7,
+#fff,
+#ffeef5
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow-y:auto;
+
+padding:20px;
+
+text-align:center;
+
+}
+
+
+
+/* Screens */
+
+.screen{
+
+display:none;
+
+width:100%;
+max-width:600px;
+
+animation:appear .8s ease;
+
+}
+
+
+.active{
+
+display:block;
+
+}
+
+
+
+/* Glass */
+
+.card,
+.reason{
+
+background:
+rgba(255,255,255,.65);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.15);
+
+padding:25px;
+
+}
+
+
+
+
+/* Buttons */
+
+button{
+
+border:none;
+
+padding:16px 35px;
+
+border-radius:50px;
+
+font-size:17px;
+
+font-weight:600;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#ff5f8f,
+#ff9db5
+);
+
+box-shadow:
+0 10px 25px rgba(255,80,130,.3);
+
+cursor:pointer;
+
+margin-top:25px;
+
+transition:.3s;
+
+}
+
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+
+
+
+/* Envelope */
+
+
+.envelope{
+
+width:230px;
+
+height:160px;
+
+margin:auto;
+
+background:
+
+linear-gradient(
+135deg,
+#ff7fa3,
+#ff4f81
+);
+
+
+border-radius:18px;
+
+position:relative;
+
+box-shadow:
+
+0 25px 40px rgba(255,80,130,.35);
+
+
+animation:float 3s infinite;
+
+
+}
+
+
+
+.envelope:before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+
+border-left:115px solid transparent;
+
+border-right:115px solid transparent;
+
+border-top:85px solid #ffb1c8;
+
+
+}
+
+
+
+.envelope:after{
+
+content:"❤️";
+
+font-size:45px;
+
+position:absolute;
+
+left:50%;
+
+top:55%;
+
+transform:translate(-50%,-50%);
+
+}
+
+
+
+
+/* Titles */
+
+h1{
+
+color:#ff4f81;
+
+font-size:34px;
+
+}
+
+
+p{
+
+color:#555;
+
+line-height:1.8;
+
+font-size:16px;
+
+}
+
+
+
+/* Icon boxes */
+
+
+.icon-box{
+
+width:100px;
+
+height:100px;
+
+margin:auto;
+
+border-radius:30px;
+
+
+background:
+
+linear-gradient(
+135deg,
+rgba(255,255,255,.9),
+rgba(255,200,220,.5)
+);
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.15);
+
+
+}
+
+
+.icon-box svg{
+
+width:55px;
+
+height:55px;
+
+stroke:#ff4f81;
+
+stroke-width:2;
+
+}
+
+
+
+
+/* Balloons */
+
+
+.balloon{
+
+width:90px;
+
+height:90px;
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin:15px;
+
+border-radius:30px;
+
+
+background:
+
+rgba(255,255,255,.7);
+
+
+box-shadow:
+
+0 15px 30px rgba(0,0,0,.15);
+
+
+cursor:pointer;
+
+animation:float 2s infinite;
+
+}
+
+
+.balloon svg{
+
+width:45px;
+
+height:45px;
+
+stroke:#ff6f91;
+
+}
+
+
+
+
+.reason{
+
+margin:15px;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+/* Final card */
+
+
+.final-card{
+
+text-align:left;
+
+}
+
+
+.final-card h1{
+
+text-align:center;
+
+}
+
+
+
+
+/* Confetti */
+
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:12px;
+
+height:12px;
+
+border-radius:4px;
+
+animation:fall linear forwards;
+
+z-index:20;
+
+}
+
+
+
+@keyframes fall{
+
+to{
+
+transform:
+translateY(110vh)
+rotate(720deg);
+
+}
+
+}
+
+
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+
+
+@keyframes appear{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+h1{
+
+font-size:28px;
+
+}
+
+
+p{
+
+font-size:15px;
+
+}
+
+
+.envelope{
+
+width:190px;
+
+height:130px;
+
+}
+
+
+.envelope:before{
+
+border-left-width:95px;
+
+border-right-width:95px;
+
+border-top-width:70px;
+
+}
+
+
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<!-- MUSIC -->
+
+<iframe
+
+id="music"
+
+width="0"
+
+height="0"
+
+src=""
+
+allow="autoplay">
+
+</iframe>
+
+
+
+
+<!-- STEP 1 -->
+
+<div class="screen active" id="step1">
+
+
+<div class="envelope">
+
+</div>
+
+
+<h1>
+A surprise for Jane 💌
+</h1>
+
+
+<p>
+A little birthday journey made with love ❤️
+</p>
+
+
+<button onclick="openLetter()">
+
+Open the envelope
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- STEP 2 -->
+
+
+<div class="screen" id="step2">
+
+
+<h1>
+Birthday surprise 🎉
+</h1>
+
+
+<p>
+Tap all the icons to continue
+</p>
+
+
+
+<div class="balloon" onclick="pop(this)">
+<i data-lucide="gift"></i>
+</div>
+
+
+<div class="balloon" onclick="pop(this)">
+<i data-lucide="cake"></i>
+</div>
+
+
+<div class="balloon" onclick="pop(this)">
+<i data-lucide="party-popper"></i>
+</div>
+
+
+
+<p id="balloonText"></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- STEP 3 -->
+
+
+<div class="screen" id="step3">
+
+
+<h1>
+Why you are special ❤️
+</h1>
+
+
+
+<div class="reason" onclick="reveal(this)">
+✨ You always try your best
+</div>
+
+
+<div class="reason" onclick="reveal(this)">
+🌸 You have such a kind heart
+</div>
+
+
+<div class="reason" onclick="reveal(this)">
+⭐ You keep growing every day
+</div>
+
+
+<div class="reason" onclick="reveal(this)">
+❤️ You make people around you happy
+</div>
+
+
+
+<button onclick="next(4)">
+Open my message 💌
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- STEP 4 -->
+
+
+<div class="screen" id="step4">
+
+
+<div class="card final-card">
+
+
+<div class="icon-box">
+
+<i data-lucide="heart"></i>
+
+</div>
+
+
+<h1>
+Happy 22nd Birthday Jane 🎂❤️
+</h1>
+
+
+<p>
+
+
+Hi Janey, Happyyy Birthday mamaaa! 🥳❤️
+
+
+<br><br>
+
+
+It's your dayyy, enjoy it to the fullest.
+
+I wish you all the best with everything in your life.
+
+May this year bring you happiness, success,
+beautiful memories and everything your heart wishes for.
+
+
+<br><br>
+
+
+I’m always here to support you no matter what ❤️
+
+
+<br><br>
+
+
+I’m so proud of you and seeing how far you have come.
+
+You have worked so hard and grown so much.
+
+Always remember to enjoy the journey and have fun
+along the way.
+
+
+<br><br>
+
+
+I wish you all the best for your upcoming exams.
+
+I know you will do amazing!
+
+Believe in yourself and support your friends too.
+
+
+<br><br>
+
+
+I can't wait to meet you ASAP and create more
+beautiful memories together.
+
+
+<br><br>
+
+
+Keep smiling, keep shining, and enjoy your special day.
+
+
+<br><br>
+
+
+Happy 22nd Birthday Jane ❤️🎉
+
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+lucide.createIcons();
+
+
+
+let count=0;
+
+
+
+function openLetter(){
+
+
+document.getElementById("music").src=
+
+"https://www.youtube.com/embed/Zx31bB2vMns?autoplay=1&loop=1&playlist=Zx31bB2vMns";
+
+
+next(2);
+
+
+}
+
+
+
+
+function next(num){
+
+
+document.querySelectorAll(".screen")
+.forEach(x=>x.classList.remove("active"));
+
+
+document.getElementById("step"+num)
+.classList.add("active");
+
+
+lucide.createIcons();
+
+
+if(num==4){
+
+confetti();
+
+}
+
+
+}
+
+
+
+
+
+function pop(item){
+
+
+item.style.opacity="0";
+
+setTimeout(()=>{
+
+item.style.display="none";
+
+},300);
+
+
+count++;
+
+
+if(count==3){
+
+
+document.getElementById("balloonText").innerHTML=
+"Yayyy! 🎉";
+
+
+setTimeout(()=>{
+
+next(3);
+
+},1200);
+
+
+}
+
+
+}
+
+
+
+
+function reveal(item){
+
+
+item.innerHTML="❤️ "+item.innerHTML+" ❤️";
+
+
+}
+
+
+
+
+function confetti(){
+
+
+let colors=[
+
+"#ff4f81",
+"#ffd700",
+"#00c2ff",
+"#7cff00",
+"#9b59b6"
+
+];
+
+
+for(let i=0;i<250;i++){
+
+
+let c=document.createElement("div");
+
+
+c.className="confetti";
+
+
+c.style.left=Math.random()*100+"vw";
+
+
+c.style.backgroundColor=
+colors[Math.floor(Math.random()*colors.length)];
+
+
+
+c.style.animationDuration=
+(Math.random()*3+2)+"s";
+
+
+
+document.body.appendChild(c);
+
+
+
+setTimeout(()=>{
+
+c.remove();
+
+},5000);
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
